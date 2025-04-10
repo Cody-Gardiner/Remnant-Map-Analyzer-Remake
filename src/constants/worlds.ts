@@ -1,0 +1,77 @@
+export const MainLocations = {
+  'City Overworld Zone1': 'Fairview',
+  'City Overworld Zone2': 'Westcourt',
+  'Wasteland Overworld Zone1': 'TheEasternWind',
+  'Wasteland Overworld Zone2': 'TheScouringWaste',
+  'Jungle Overworld Zone1': 'TheVerdantStrand',
+  'Jungle Overworld Zone2': 'TheScaldingGlade',
+  'Swamp Overworld Zone1': 'TheFetidGlade',
+  'Swamp Overworld Zone2': 'TheMistFen',
+  'Snow Overworld Zone1': 'DrolniirWoods',
+  'Snow Overworld Zone2': 'DeepfrostExpanse',
+} as const
+
+export const SubLocations = {
+  //Earth
+  RootWraith: 'TheHiddenSanctum',
+  RootBrute: 'SunkenPassage',
+  Brabus: 'CutthroatChannel',
+  RootTumbleweed: 'TheTangledPass',
+  Splitter: 'ResearchStationAlpha',
+  RootEnt: 'TheChokingHollow',
+  RootDragon: 'TheAshYard',
+  HuntersHideout: 'HiddenGrotto',
+  MadMerchant: 'Junktown',
+  LastWill: "Sorrow'sField",
+  RootShrine: 'TheGallows',
+  LizAndLiz: 'TheWarren',
+  RootCultist: 'MarrowPass',
+
+  // Rhom
+  SwarmMaster: 'TheIronRift',
+  HoundMaster: 'TheBurrows',
+  Sentinel: 'ShackledCanyon',
+  Vyr: 'TheArdentTemple',
+  WastelandGuardian: 'LoomOfTheBlackSun',
+  TheHarrow: 'TheBunker',
+  TheLostGantry: 'ConcourseOfTheSun',
+  ArmorVault: 'VaultOfTheHeralds',
+  TheCleanRoom: 'ThePurgeHall',
+
+  // Corsus
+  SlimeHulk: 'TheDrownedTrench',
+  Tyrant: 'TheCapillary',
+  FlickeringHorror: 'HallOfWhispers',
+  BarbTerror: 'NeedleLair',
+  QueensTemple: 'IskalTemple',
+  SwampGuardian: 'TheGrotto',
+  Wisp: 'CircletHatchery',
+  FetidPool: 'FetidPools',
+  BrainBug: 'StrangePass',
+  Fatty: ' TheShack',
+
+  // Yaesha
+  KinCaller: 'TheHallOfJudgement',
+  BlinkFiend: "Widow'sPass",
+  BlinkThief: 'VerdantStrand',
+  StormCaller: "Heretic'sNest",
+  ImmolatorAndZephyr: 'WitheringVillage',
+  Wolf: "Ravager'sHaunt",
+  DoeShrine: "Widow'sVestry",
+  WolfShrine: 'TempleOfTheRavager',
+  TheRisen: "Ahanae'sLament",
+  TotemFather: 'TheScaldingGlade',
+  StuckMerchant: 'MerchantDungeon',
+
+  //Reisum
+  UrikkiBlademasters: 'ValenhagMines',
+  ShieldWarden: "Exiles'sTrench",
+  BlizzardMage: 'WutheringKeep',
+  TheJackal: 'WildReach',
+  WarningTotems: "Magir'sDirge",
+  ShamanFlames: 'GraveOfTheElders',
+  RatRider: 'CrimsonHold',
+  FrozenLords: "Judgement'sSpear",
+  IceSkimmer: 'TheFrieranSea',
+  CreepersPeeper: "Watcher'sHollow",
+} as const
