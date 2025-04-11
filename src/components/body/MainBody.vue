@@ -1,19 +1,15 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-import BossContainer from '../bosses/BossContainer.vue'
-import CharacterContainer from '../character/CharacterContainer.vue'
 import Explaination from '../explanation/Explaination.vue'
 import PageHeader from '../header/PageHeader.vue'
-import ItemsContainer from '../items/ItemsContainer.vue'
 
 import { FileReaderPayload } from '@/constants/fileContents'
 import { CardItem } from '@/components/card/cardItem'
 import { processFileData } from '@/processor/process'
-import SideQuestContainer from '../sideQuests/SideQuestContainer.vue'
-import { getDistinctByKey } from '@/processor/helpers/getDistinct'
-import WorldContainer from '../world/WorldContainer.vue'
+import { getDistinctByKey, getDistinctCardItemsWithCount } from '@/processor/helpers/getDistinct'
 import { WorldData } from '../world/worldData'
+import CardContainer from '../card/CardContainer.vue'
 
 const worldData = ref<WorldData>()
 const character = ref('') // TODO
@@ -28,26 +24,21 @@ const handleFileContents = (payload: FileReaderPayload) => {
 
   worldData.value = fileData?.worldData
   bosses.value = getDistinctByKey(fileData?.bosses, 'name')
-  items.value = []
   sideQuests.value = getDistinctByKey(fileData?.sideQuests, 'name')
-
-  console.log('World Data', worldData)
-  console.log('Bosses', bosses.value)
-  console.log('Items', items.value)
-  console.log('SideQuests', sideQuests.value)
-
-  fileData?.items.forEach((element) => {
-    items.value?.push(element)
-  })
+  items.value = getDistinctCardItemsWithCount(fileData?.items ?? [])
 }
 </script>
 
 <template>
   <PageHeader @file-read="handleFileContents" />
   <Explaination />
-  <WorldContainer v-if="worldData" :worldData="worldData" />
-  <CharacterContainer v-if="character.length > 0" :character="character" />
-  <BossContainer v-if="bosses?.length > 0" :bossData="bosses" />
-  <SideQuestContainer v-if="sideQuests?.length > 0" :locations="sideQuests" />
-  <ItemsContainer v-if="items?.length > 0" :items="items" />
+  <CardContainer
+    v-if="worldData"
+    :data="worldData.locations"
+    :title="'World Locations | Current Location: ' + worldData?.currentMainLocation"
+  />
+  <CardContainer v-if="sideQuests" :data="sideQuests" :title="'Side Quests'" />
+  <CardContainer v-if="character" :data="character" :title="'Character Information'" />
+  <CardContainer v-if="bosses" :data="bosses" :title="'Bosses'" />
+  <CardContainer v-if="items" :data="items" :title="'Items'" />
 </template>

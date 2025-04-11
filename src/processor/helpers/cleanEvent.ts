@@ -1,6 +1,7 @@
 export const cleanEventName = (name: string | undefined) => {
   if (!name) return ''
   return name
+    .replace(' ', '')
     .replace('FlickeringHorror', 'DreamEater')
     .replace('Wisp', 'HiveWisps')
     .replace('TheRisen', 'Reanimators')
@@ -25,4 +26,6 @@ export const cleanEventName = (name: string | undefined) => {
     .replace('SwampGuardian', 'Ixillis')
     .replace('Splitter', 'RiphideLetosArmor')
     .replace('RatRider', 'Brudvaak')
+    .replace('GunslignersRing', 'GunslignersRing')
+    .replace('TraitBook', 'TomeOfWisdom')
 }

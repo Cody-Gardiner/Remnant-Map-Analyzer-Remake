@@ -1,7 +1,7 @@
 import { Campaign, MainLocations, Mode } from '@/constants/worlds'
 import { CardItem } from '@/components/card/cardItem'
 import { cleanEventName } from './helpers/cleanEvent'
-import { WorldData, WorldLocation } from '@/components/world/worldData'
+import { WorldData } from '@/components/world/worldData'
 
 export const processFileData = (content: string | undefined) => {
   if (!content) return
@@ -47,7 +47,7 @@ export function parseWorldData(
   textArray: string[],
   worldMode: '#adventure' | '#main',
 ): { worldData: WorldData; items: CardItem[]; bosses: CardItem[]; sideQuests: CardItem[] } {
-  const worldLocations: WorldLocation[] = []
+  const worldLocations: CardItem[] = []
   const items: CardItem[] = []
   const bosses: CardItem[] = []
   const sideQuests: CardItem[] = []
@@ -111,7 +111,7 @@ export function parseWorldData(
 
       if (convertedName) {
         worldLocations.push({
-          name: convertedName,
+          name: cleanEventName(convertedName),
         })
       }
     }
@@ -121,6 +121,25 @@ export function parseWorldData(
     mode: worldMode,
     currentMainLocation: currentMainLocation,
     locations: worldLocations,
+  }
+
+  // Add missing bosses/encounters
+  if (worldMode === Mode.Campaign.tag) {
+    bosses.push({
+      name: cleanEventName('Dreamer'),
+    })
+
+    bosses.push({
+      name: cleanEventName('Nightmare'),
+    })
+
+    bosses.push({
+      name: cleanEventName('RootMother'),
+    })
+
+    bosses.push({
+      name: cleanEventName('UndyingKing'),
+    })
   }
 
   return { worldData, items, bosses, sideQuests }
