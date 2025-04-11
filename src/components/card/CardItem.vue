@@ -43,7 +43,7 @@ const description = computed(() => {
   <div class="m-3" @click="toggleExpand">
     <div
       class="position-relative d-flex justify-content-center align-items-center card shadow-lg border-0 rounded-3 hover-shadow p-3 m-2"
-      style="max-width: 275px; cursor: pointer"
+      style="width: 400px; cursor: pointer"
     >
       <!-- Toggle Icon -->
       <div
@@ -53,15 +53,19 @@ const description = computed(() => {
           transition: 'transform 0.3s ease',
         }"
       >
-        <i class="bi bi-chevron-down fs-1">^</i>
+        <i v-if="description && description.length > 120" class="bi bi-chevron-down fs-1">^</i>
       </div>
 
-      <img :src="imgSrc" class="p-2 rounded-circle shadow-lg bg-dark rounded-3" alt="Card image" />
+      <img
+        :src="imgSrc"
+        class="p-2 rounded-circle shadow-lg bg-secondary rounded-3"
+        alt="Card image"
+      />
       <div class="card-body" style="width: 100%">
         <h3 class="card-title text-wrap text-break text-center">
           {{ props.name?.replace(/([A-Z])/g, ' $1').trim() }}
         </h3>
-        <hr class="bg-dark border-3 border-bottom" />
+        <hr v-if="description" class="bg-dark border-3 border-bottom" />
         <p
           class="card-text text-center"
           :style="

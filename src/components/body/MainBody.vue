@@ -23,9 +23,15 @@ const handleFileContents = (payload: FileReaderPayload) => {
   const fileData = processFileData(payload.content?.toString())
 
   worldData.value = fileData?.worldData
-  bosses.value = getDistinctByKey(fileData?.bosses, 'name')
-  sideQuests.value = getDistinctByKey(fileData?.sideQuests, 'name')
-  items.value = getDistinctCardItemsWithCount(fileData?.items ?? [])
+  bosses.value = getDistinctByKey(fileData?.bosses, 'name').sort((a, b) =>
+    a.name.toLowerCase().localeCompare(b.name.toLowerCase()),
+  )
+  sideQuests.value = getDistinctByKey(fileData?.sideQuests, 'name').sort((a, b) =>
+    a.name.toLowerCase().localeCompare(b.name.toLowerCase()),
+  )
+  items.value = getDistinctCardItemsWithCount(fileData?.items ?? []).sort((a, b) =>
+    a.name.toLowerCase().localeCompare(b.name.toLowerCase()),
+  )
 }
 </script>
 
