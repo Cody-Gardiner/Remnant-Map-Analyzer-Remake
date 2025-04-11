@@ -1,20 +1,20 @@
-<script>
-import Card from './Card.vue'
+<script setup lang="ts">
+import CardItem from './CardItem.vue'
 
-const props = defineProps({
-  // Import a type here, figure out why it isnt working
+defineProps({
+  data: Array<typeof CardItem>,
 })
 </script>
 
 <template>
-  <div class="container py-5">
-    <div class="d-flex flex-row justify-content-start">
+  <div class="m-0 w-100 py-2">
+    <div class="d-flex flex-row justify-content-center flex-wrap">
       <div
         class="d-flex justify-content-center mb-4"
-        v-for="(card, index) in cards"
+        v-for="(cardValue, index) in data"
         :key="index"
       >
-        <Card :image="card.image" :name="card.name" :description="card.description" />
+        <CardItem :name="cardValue.name" />
       </div>
     </div>
   </div>

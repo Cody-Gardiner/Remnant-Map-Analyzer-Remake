@@ -1,0 +1,28 @@
+export const cleanEventName = (name: string | undefined) => {
+  if (!name) return ''
+  return name
+    .replace('FlickeringHorror', 'DreamEater')
+    .replace('Wisp', 'HiveWisps')
+    .replace('TheRisen', 'Reanimators')
+    .replace('LizAndLiz', 'LizChicagoTypewriter')
+    .replace('Fatty', 'TheUncleanOne')
+    .replace('WastelandGuardian', 'Claviger')
+    .replace('RootEnt', 'EntBoss')
+    .replace('RootDragon', 'Singe')
+    .replace('SwarmMaster', 'Scourge')
+    .replace('RootWraith', 'Shroud')
+    .replace('RootTumbleweed', 'TheMangler')
+    .replace('Kincaller', 'Warden')
+    .replace('Tyrant', 'Thrall')
+    .replace('Vyr', 'ShadeAndShatter')
+    .replace('ImmolatorAndZephyr', 'ScaldAndSear')
+    .replace('RootBrute', 'Gorefist')
+    .replace('SlimeHulk', 'Canker')
+    .replace('BlinkFiend', 'Onslaught')
+    .replace('Sentinel', 'Raze')
+    .replace('Penitent', 'Letos Amulet')
+    .replace('LastWill', 'SupplyRunAssaultRifle')
+    .replace('SwampGuardian', 'Ixillis')
+    .replace('Splitter', 'RiphideLetosArmor')
+    .replace('RatRider', 'Brudvaak')
+}

@@ -12,11 +12,11 @@
       Navigate to <b>%LOCALAPPDATA%/Remnant/Saved/SaveGames</b> and locate the file named something
       like <b>save_0.bak</b> or <b>save_0.sav</b>. Upload to see what you rolled.
     </p>
-    <p>
+    <!-- <p>
       For Adventure Mode, make sure to use the filters to filter by the selected world. Worlds other
       than what you chose should be ignored as they are just past rolls for those worlds. There is
       currently no way to determine which world was chosen in adventure mode so the tool lists all
       of them.
-    </p>
+    </p> -->
   </div>
 </template>
