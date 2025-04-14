@@ -6,7 +6,7 @@ import PageHeader from '../header/PageHeader.vue'
 
 import { FileReaderPayload } from '@/constants/fileContents'
 import type { CardItemType } from '@/components/card/cardItem'
-import { processFileData } from '@/processor/process'
+import { processFileData } from '@/processor/processFile'
 import { getDistinctByKey, getDistinctCardItemsWithCount } from '@/processor/helpers/getDistinct'
 import { WorldData } from '../world/worldData'
 import CardContainer from '../card/CardContainer.vue'
