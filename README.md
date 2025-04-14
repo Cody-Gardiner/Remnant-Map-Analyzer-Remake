@@ -69,7 +69,7 @@ EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 ```
 
-You can create the docker image using the below command on you server of choice ():
+You can create the docker image using the below command on you server of choice:
 
 ```bash
 docker build -t remnant {root_path_where_dockerfile_is}
