@@ -1,5 +1,5 @@
 import { Campaign, MainLocations, Mode } from '@/constants/worlds'
-import { CardItem } from '@/components/card/cardItem'
+import type { CardItemType } from '@/components/card/cardItem'
 import { cleanEventName } from './helpers/cleanEvent'
 import { WorldData } from '@/components/world/worldData'
 
@@ -46,11 +46,16 @@ export const processFileData = (content: string | undefined) => {
 export function parseWorldData(
   textArray: string[],
   worldMode: '#adventure' | '#main',
-): { worldData: WorldData; items: CardItem[]; bosses: CardItem[]; sideQuests: CardItem[] } {
-  const worldLocations: CardItem[] = []
-  const items: CardItem[] = []
-  const bosses: CardItem[] = []
-  const sideQuests: CardItem[] = []
+): {
+  worldData: WorldData
+  items: CardItemType[]
+  bosses: CardItemType[]
+  sideQuests: CardItemType[]
+} {
+  const worldLocations: CardItemType[] = []
+  const items: CardItemType[] = []
+  const bosses: CardItemType[] = []
+  const sideQuests: CardItemType[] = []
 
   const currentMainLocation =
     worldMode === Mode.Adventure.tag
@@ -60,7 +65,6 @@ export function parseWorldData(
   for (let i = 0; i < textArray.length; i++) {
     const textLine = textArray[i]
     const parts = textLine.split('/')
-    console.log(parts)
 
     if (!parts[1]) continue
 

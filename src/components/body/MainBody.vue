@@ -5,17 +5,17 @@ import Explaination from '../explanation/Explaination.vue'
 import PageHeader from '../header/PageHeader.vue'
 
 import { FileReaderPayload } from '@/constants/fileContents'
-import { CardItem } from '@/components/card/cardItem'
-import { processFileData } from '@/processor/process'
+import type { CardItemType } from '@/components/card/cardItem'
+import { processFileData } from '@/processor/processFile'
 import { getDistinctByKey, getDistinctCardItemsWithCount } from '@/processor/helpers/getDistinct'
 import { WorldData } from '../world/worldData'
 import CardContainer from '../card/CardContainer.vue'
 
 const worldData = ref<WorldData>()
-const character = ref('') // TODO
-const bosses = ref<Array<CardItem>>()
-const items = ref<Array<CardItem>>()
-const sideQuests = ref<Array<CardItem>>()
+const character = ref<Array<CardItemType>>() // todo
+const bosses = ref<Array<CardItemType>>()
+const items = ref<Array<CardItemType>>()
+const sideQuests = ref<Array<CardItemType>>()
 
 // Handle file contents
 const handleFileContents = (payload: FileReaderPayload) => {

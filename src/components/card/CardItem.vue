@@ -23,7 +23,7 @@ const imgSrc = computed(() => {
   if (imageFile) {
     return imageFile
   } else if (imageFileEdit) return imageFileEdit
-  return '../src/assets/images/world-stone.png'
+  return '../../assets/images/world-stone.png' //'/src/assets/images/world-stone.png'
 })
 
 const description = computed(() => {

@@ -15,7 +15,7 @@ const handleFileContents = (payload: FileReaderPayload) => {
   <header class="d-flex justify-content-between align-items-center p-4 border-bottom bg-light">
     <div class="d-flex flex-row justify-content-center align-items-center">
       <img
-        src="../../assets/images/world-stone-transparent.png"
+        src="../../../public/assets/images/world-stone-transparent.png"
         class="header-image"
         alt="Remnant World Stone"
       />
