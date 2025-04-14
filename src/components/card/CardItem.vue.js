@@ -15,7 +15,7 @@ const imgSrc = computed(() => {
     }
     else if (imageFileEdit)
         return imageFileEdit;
-    return '../src/assets/images/world-stone.png';
+    return '../../assets/images/world-stone.png'; //'/src/assets/images/world-stone.png'
 });
 const description = computed(() => {
     const editName = props.name?.replace(' ', '').substring(0, props.name.indexOf('x') - 1);

@@ -46,7 +46,6 @@ export function parseWorldData(textArray, worldMode) {
     for (let i = 0; i < textArray.length; i++) {
         const textLine = textArray[i];
         const parts = textLine.split('/');
-        console.log(parts);
         if (!parts[1])
             continue;
         let eventName;

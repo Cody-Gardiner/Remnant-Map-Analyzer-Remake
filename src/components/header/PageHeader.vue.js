@@ -16,7 +16,7 @@ __VLS_asFunctionalElement(__VLS_intrinsicElements.div, __VLS_intrinsicElements.d
     ...{ class: "d-flex flex-row justify-content-center align-items-center" },
 });
 __VLS_asFunctionalElement(__VLS_intrinsicElements.img)({
-    src: "../../assets/images/world-stone-transparent.png",
+    src: "../../../public/assets/images/world-stone-transparent.png",
     ...{ class: "header-image" },
     alt: "Remnant World Stone",
 });
