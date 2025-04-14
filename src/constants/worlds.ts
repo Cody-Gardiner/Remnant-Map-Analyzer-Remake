@@ -1,15 +1,15 @@
 export const MainLocations = {
-  'City Overworld Zone1': 'Fairview',
-  'City Overworld Zone2': 'Westcourt',
-  'Wasteland Overworld Zone1': 'TheEasternWind',
-  'Wasteland Overworld Zone2': 'TheScouringWaste',
-  'Jungle Overworld Zone1': 'TheVerdantStrand',
-  'Jungle Overworld Zone2': 'TheScaldingGlade',
-  'Swamp Overworld Zone1': 'TheFetidGlade',
-  'Swamp Overworld Zone2': 'TheMistFen',
-  'Snow Overworld Zone1': 'DrolniirWoods',
-  'Snow Overworld Zone2': 'DeepfrostExpanse',
-} as const
+  CityOverworldZone1: 'Fairview',
+  CityOverworldZone2: 'Westcourt',
+  WastelandOverworldZone1: 'TheEasternWind',
+  WastelandOverworldZone2: 'TheScouringWaste',
+  JungleOverworldZone1: 'TheVerdantStrand',
+  JungleOverworldZone2: 'TheScalding Glade',
+  SwampOverworldZone1: 'TheFetidGlade',
+  SwampOverworldZone2: 'TheMistFen',
+  SnowOverworldZone1: 'DrolniirWoods',
+  SnowOverworldZone2: 'DeepfrostExpanse',
+}
 
 export const SubLocations = {
   //Earth
@@ -74,4 +74,26 @@ export const SubLocations = {
   FrozenLords: "Judgement'sSpear",
   IceSkimmer: 'TheFrieranSea',
   CreepersPeeper: "Watcher'sHollow",
+} as const
+
+export const Campaign = {
+  Ward13: '/Game/Campaign_Main/Quest_Campaign_Ward13.Quest_Campaign_Ward13',
+  City: '/Game/Campaign_Main/Quest_Campaign_City.Quest_Campaign_City',
+  Subject2923: {
+    WardPrime:
+      '/Game/Campaign_Clementine/Quests/WardPrime/Quest_WardPrime_Template.Quest_WardPrime_Template',
+    Overworld:
+      '/Game/World_Rural/Templates/Template_Rural_Overworld_02.Template_Rural_Overworld_02',
+  },
+} as const
+
+export const Mode = {
+  Campaign: {
+    tag: '#main',
+    name: 'Main',
+  },
+  Adventure: {
+    tag: '#adventure',
+    name: 'Adventure',
+  },
 } as const
