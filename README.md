@@ -1,39 +1,71 @@
-# Remnant Map Analyzer Remake
+# Remnant From The Ashes (FTA) Save File Viewer
 
-This template should help get you started developing with Vue 3 in Vite.
+A Vue 3 web application to analyze and visualize campaign/adventure data from `.sav` or `.bak` files used in the game *Remnant From The Ashes (FTA)*.
 
-## Recommended IDE Setup
+Originally based on source code by [hzla](https://github.com/hzla). This version includes major refactors, Vue 3 + TypeScript setup, and Docker deployment capabilities.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+You can find the original project here: [Remnant-World-Analyzer](https://github.com/hzla/Remnant-World-Analyzer).
 
-## Type Support for `.vue` Imports in TS
+---
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## 🚀 Features
 
-## Customize configuration
+- Upload `.sav` or `.bak` files directly.
+- View campaign and adventure mode data.
+- Card-style UI with expandable item/boss descriptions.
+- Distinct item parsing and formatting.
+- Responsive layout with Bootstrap 5.
+- Dockerized deployment-ready.
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+---
 
-## Project Setup
+## 🛠️ Project Setup
 
-```sh
+### Requirements
+
+- Node.js (v16+ recommended)
+- npm or yarn
+
+### Install dependencies
+
+```bash
 npm install
+# or
+yarn install
 ```
 
-### Compile and Hot-Reload for Development
+### To Run
 
-```sh
+```bash
 npm run dev
+# or
+yarn dev
 ```
 
-### Type-Check, Compile and Minify for Production
+### To Build
 
-```sh
+```bash
 npm run build
+# or
+yarn build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+## Docker
 
-```sh
-npm run lint
+This project includes a pre-built docker file for easy docker deployment.
+
+```dockerfile
+# Dockerfile
+FROM node:18-alpine as build-stage
+WORKDIR /app
+COPY . .
+RUN npm install
+RUN npm run build
+
+FROM nginx:stable-alpine as production-stage
+COPY --from=build-stage /app/dist /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
 ```
+
