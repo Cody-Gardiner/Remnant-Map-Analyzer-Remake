@@ -1,6 +1,6 @@
 # Remnant From The Ashes (FTA) Save File Viewer
 
-A Vue 3 web application to analyze and visualize campaign/adventure data from `.sav` or `.bak` files used in the game *Remnant From The Ashes (FTA)*.
+A Vue 3 web application to analyze and visualize campaign/adventure data from `.sav` or `.bak` files used in the game _Remnant From The Ashes (FTA)_.
 
 Originally based on source code by [hzla](https://github.com/hzla). This version includes major refactors, Vue 3 + TypeScript setup, and Docker deployment capabilities.
 
@@ -69,3 +69,9 @@ EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 ```
 
+You can create the docker image using the below command on you server of choice ():
+
+```bash
+docker build -t remnant {root_path_where_dockerfile_is}
+docker run -d -p 80:80 --name remnant-app remnant
+```
