@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import CardItem from './CardItem.vue'
+import type { CardItemType } from './cardItem'
 
 const props = defineProps<{
-  data: (typeof CardItem)[]
+  data: CardItemType[]
   title: string
 }>()
 </script>

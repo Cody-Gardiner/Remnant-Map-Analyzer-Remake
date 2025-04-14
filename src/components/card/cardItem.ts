@@ -1,3 +1,3 @@
-export type CardItem = {
+export type CardItemType = {
   name: string
 }

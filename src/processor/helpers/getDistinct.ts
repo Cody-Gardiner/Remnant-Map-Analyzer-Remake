@@ -1,4 +1,4 @@
-import { CardItem } from '@/components/card/cardItem'
+import type { CardItemType } from '@/components/card/cardItem'
 
 export function getDistinctByKey<T>(arr: T[] | undefined, key: keyof T): T[] {
   const seen = new Set()
@@ -11,7 +11,7 @@ export function getDistinctByKey<T>(arr: T[] | undefined, key: keyof T): T[] {
   })
 }
 
-export function getDistinctCardItemsWithCount(items: CardItem[]): CardItem[] {
+export function getDistinctCardItemsWithCount(items: CardItemType[]): CardItemType[] {
   const counts: Record<string, number> = {}
 
   // Count occurrences
@@ -19,7 +19,7 @@ export function getDistinctCardItemsWithCount(items: CardItem[]): CardItem[] {
     counts[item.name] = (counts[item.name] || 0) + 1
   }
 
-  const result: CardItem[] = []
+  const result: CardItemType[] = []
 
   for (const name in counts) {
     const count = counts[name]
